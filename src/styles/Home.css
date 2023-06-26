@@ -1,0 +1,9 @@
+.search {
+    width: 70%;
+    border: none;
+}
+
+.main-content {
+    display: flex;
+    gap: 20px;
+}
