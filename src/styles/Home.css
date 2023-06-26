@@ -1,9 +1,12 @@
-.search {
-    width: 70%;
+.search-btn {
+    margin-top: 20px;
+    width: 80%;
+    height: 30px;
     border: none;
+    text-align: center;
 }
 
-.main-content {
+.pokemon {
     display: flex;
-    gap: 20px;
+    flex-wrap: wrap;
 }
