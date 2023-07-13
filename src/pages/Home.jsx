@@ -12,9 +12,6 @@ const Home = () => {
       </div>
       <div className='pokemon'>
         <PokemonCard />
-        <PokemonCard />
-        <PokemonCard />
-        <PokemonCard />
       </div>
     </div>
   )

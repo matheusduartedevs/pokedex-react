@@ -1,40 +1,35 @@
 import React, { useEffect, useState } from 'react'
-import '/src/styles/PokemonCard.css'
 
 const PokemonCard = () => {
-    const [pokemonCard, setPokemonCard] = useState([])
+    const [pokemonData, setPokemonData] = useState([])
 
-    const searchPokemon = () => {
+    const fetchPokemonData = async () => {
         try {
-            fetch('https://pokeapi.co/api/v2/pokemon/pikachu')
-                .then(response => {
-                    return response.json()
-                })
-                .then(data => {
-                    setPokemonCard(data)
-                })
-        } catch (err) {
-            console.log(err)
+            const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=20')
+            const data = await response.json()
+            setPokemonData(data.results)
+            console.log(data)
+        } catch (error) {
+            console.log(error)
         }
     }
 
     useEffect(() => {
-        searchPokemon()
+        fetchPokemonData()
     }, [])
 
-                return (
-                <div>
-                    <div className="card-container">
-                        <div className="pokemon-card">
-                            {
-                                
-                            }
-                            <img src={data['sprites']['versions']['generation-v']['black-white']['animated']['front_default']} alt="Pokemon" />
-                            <h3>{data.name}</h3>
-                        </div>
-                    </div>
+    console.log(pokemonData)
+
+    return (
+        <div>
+            {pokemonData.map((pokemon) => (
+                <div key={pokemon.name}>
+                    <h2>{pokemon.name}</h2>
+                    <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon}`} />
                 </div>
-            )
+            ))}
+        </div>
+    )
 }
 
 export default PokemonCard
