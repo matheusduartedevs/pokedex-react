@@ -1,12 +1,10 @@
 import React from 'react'
 import '/src/styles/Home.css'
-import Navbar from '../components/Navbar'
 import PokemonCard from '../components/PokemonCard'
 
 const Home = () => {
   return (
-    <div>
-      <Navbar />
+    <div className='home'>
       <div className="search">
         <input type="text" placeholder='Digite o nome do seu Pokemon!' className='search-btn' />
       </div>

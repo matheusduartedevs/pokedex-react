@@ -1,0 +1,11 @@
+.container {
+    max-width: 1200px;
+    margin: 0;
+}
+
+.pokedex {
+    display: grid;
+    grid-template-columns: repeat(4, 1);
+    gap: 20px;
+}
+

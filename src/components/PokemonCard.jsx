@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import '/src/styles/PokemonCard.css'
 
 const PokemonCard = () => {
     const [pokemonData, setPokemonData] = useState([])
@@ -13,7 +14,7 @@ const PokemonCard = () => {
             console.log(error)
         }
     }
-
+    
     useEffect(() => {
         fetchPokemonData()
     }, [])
@@ -21,11 +22,11 @@ const PokemonCard = () => {
     console.log(pokemonData)
 
     return (
-        <div>
+        <div className='pokemon-container'>
             {pokemonData.map((pokemon) => (
-                <div key={pokemon.name}>
+                <div className='pokemon-grid' key={pokemon.name}>
                     <h2>{pokemon.name}</h2>
-                    <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon}`} />
+                    <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.url.split('/')[6]}.png`} />
                 </div>
             ))}
         </div>

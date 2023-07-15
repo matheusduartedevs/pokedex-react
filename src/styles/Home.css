@@ -1,12 +1,3 @@
-.search-btn {
-    margin-top: 20px;
-    width: 80%;
-    height: 30px;
-    border: none;
-    text-align: center;
-}
-
-.pokemon {
-    display: flex;
-    flex-wrap: wrap;
+.home {
+    padding: 20px;
 }
